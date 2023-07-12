@@ -16,7 +16,7 @@ public class Houses {
 		// Check the recipe to find out what code to put here
 		rob.setSpeed(50);
 		rob.turn(-90);
-		rob.move(375);
+		rob.move(300);
 		rob.turn(90);
 		rob.penDown();
 		for (int i = 0; i < 10; i++) {
@@ -31,9 +31,7 @@ public class Houses {
 				house("large");
 			}
 		}
-
 	}
-
 	void house(String sheight) {
 		int height = 0;
 
@@ -48,19 +46,35 @@ public class Houses {
 		if (sheight.equals("large")) {
 			height = 250;
 		}
-		
-		void house(String color) {
-			int color = 0;
-			
-			if (color.equals)
-		}
 		rob.move(height);
-		rob.turn(90);
-		rob.move(50);
-		rob.turn(90);
+if(sheight.equals("large")) {
+	FlatRoof();
+}
+else {
+	PointyRoof();
+}
+	
 		rob.move(height);
 		rob.turn(-90);
+		rob.setRandomPenColor();
 		rob.move(25);
 		rob.turn(-90);
 	}
+
+	void FlatRoof() {
+		rob.turn(90);
+		rob.move(50);
+		rob.turn(90);
+
+	}
+
+	void PointyRoof() {
+	rob.turn(60);
+	rob.move(25);
+	rob.turn(60);
+	rob.move(25);
+	rob.turn(60);
+		
+	}
+
 }
