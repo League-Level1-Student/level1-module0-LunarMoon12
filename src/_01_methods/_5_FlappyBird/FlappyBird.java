@@ -20,6 +20,7 @@ public class FlappyBird extends PApplet {
     @Override
     public void draw() {
     	int birdYVelocity = -10;  
+    	int gravity = 1;
     	int x = 600;
         int y = 600;
         background(100,100,100);
