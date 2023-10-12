@@ -23,7 +23,7 @@ public class TooManyShapes {
 		// 5. Call and save what is returned from calculateTurnAngle()
 
 		// 6. Use drawPolygons() to draw your shape
-	
+	drawPolygons();
 		// 7. If the shape CANNOT be drawn
 if (!canMakeShape()) {
 	JOptionPane.showMessageDialog(null, notEnoughSides());
@@ -32,6 +32,7 @@ if (!canMakeShape()) {
 
 	}
 
+	
 	static int calculateTurnAngle(int numSides) {
 		int angle = 360 / numSides;
 		return angle;
@@ -62,7 +63,7 @@ if (!canMakeShape()) {
 	}
 
 	static boolean canMakeShape() {
-		int numSides;
+		int numSides = 0;
 		if (numSides >= 3) {
 			return true;
 		}
