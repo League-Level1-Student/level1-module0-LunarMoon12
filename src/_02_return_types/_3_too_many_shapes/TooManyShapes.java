@@ -11,28 +11,30 @@ public class TooManyShapes {
 
 	public static void main(String[] args) {
 		// 1. Ask the user how many sides they want their shape to be
-		JOptionPane.showInputDialog("How many sides do you want your shape to be?");
+	String s_sides=JOptionPane.showInputDialog("How many sides do you want your shape to be?");
+	int i_sides = Integer.parseInt(s_sides);
 		// 2. Ask the user how many shapes they want
-		JOptionPane.showInputDialog("How many shapes do you want?");
+		String s_shapes=JOptionPane.showInputDialog("How many shapes do you want?");
+		int i_shapes = Integer.parseInt(s_shapes);
 		// 3. Call canMakeShape() and save what is returned into a variable
-		boolean shape = canMakeShape();
+		
 		// 4. If the shape CAN be drawn
-		if (canMakeShape()) {
-			int angle = calculateTurnAngle(0);
+		if (canMakeShape(i_sides)) {
+			int angle = calculateTurnAngle(i_sides);
+			drawPolygons(i_sides,i_shapes,angle);
 		}
 		// 5. Call and save what is returned from calculateTurnAngle()
 
 		// 6. Use drawPolygons() to draw your shape
-	drawPolygons();
+		
 		// 7. If the shape CANNOT be drawn
-if (!canMakeShape()) {
-	JOptionPane.showMessageDialog(null, notEnoughSides());
-}
+		else {
+			JOptionPane.showMessageDialog(null, notEnoughSides());
+		}
 		// 8. Call notEnoughSides() and print out what is returned
 
 	}
 
-	
 	static int calculateTurnAngle(int numSides) {
 		int angle = 360 / numSides;
 		return angle;
@@ -62,8 +64,7 @@ if (!canMakeShape()) {
 		rob.hide();
 	}
 
-	static boolean canMakeShape() {
-		int numSides = 0;
+	static boolean canMakeShape(int numSides) {
 		if (numSides >= 3) {
 			return true;
 		}
